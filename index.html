@@ -1,1 +1,759 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Ruta en Cencosud | Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <!-- Carrusel Superior (Bienvenida) -->
+    <section class="top-roulette">
+        <div id="topCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://s32519.pcdn.co/es/wp-content/uploads/sites/3/2022/02/blog-supermarket-inventory-management-1.jpg.optimal.jpg">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-4 p-4">
+                        <h3 class="fw-bold">Excelencia en Supermercados</h3>
+                        <p>Calidad y frescura en cada rincón de la región.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/Plantillas-Facebook-2-62-31.png" class="bg-slide" alt="Cenco Mall Store">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-4 p-4">
+                        <h3 class="fw-bold">Moda e Innovación</h3>
+                        <p>Tendencias globales al alcance de todos.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.cencosud.com/cencosud/site/artic/20220310/imag/foto_0000001220220310164736/EASY16239.jpg" class="bg-slide" alt="Home Improvement">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-4 p-4">
+                        <h3 class="fw-bold">Mejoramiento del Hogar</h3>
+                        <p>Construyendo los sueños de millones de familias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegación Principal -->
+    <nav class="navbar navbar-expand-lg navbar-pro sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Cencosud_logo.svg/1280px-Cencosud_logo.svg.png" alt="Cencosud" class="navbar-logo" style="filter: brightness(0) invert(1);">
+            </a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historias">Nuestra Gente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vacantes">Oportunidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="game.html">Cenco-Play</a></li>
+                    <li class="nav-item ms-lg-4"><a class="btn-nav text-decoration-none" href="dashboard.html">Dashboard / Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero-pro">
+        <div class="container position-relative z-1">
+            <h1 class="titulo-hero mb-4">LIDERAZGO GLOBAL</h1>
+            <p class="subtitulo-hero mb-5">
+                Transformando el futuro del retail en América Latina a través de personas auténticas.
+            </p>
+            <div class="d-flex justify-content-center gap-4">
+                <a href="dashboard.html" class="btn btn-cenco text-decoration-none">Dashboard / Iniciar Ruta</a>
+                <a href="#historias" class="btn btn-nav text-decoration-none">Ver Historias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contadores Dinámicos -->
+    <section class="nosotros-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="fst-italic text-muted">"El éxito no es el final, el fracaso no es fatídico: lo que cuenta es el valor para continuar."</p>
+            </div>
+            <div class="row text-center counters-wrapper">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="dato-card">
+                        <span class="dato" data-target="150000">+0</span>
+                        <span>Colaboradores</span>
+                        <p class="small mt-2 opacity-75">Nuestra mayor fuerza es nuestra gente.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="dato-card">
+                        <span class="dato" data-target="1000">+0</span>
+                        <span>Tiendas</span>
+                        <p class="small mt-2 opacity-75">Cerca de cada hogar peruano.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dato-card">
+                        <span class="dato" data-target="5">+0</span>
+                        <span>Países</span>
+                        <p class="small mt-2 opacity-75">Un liderazgo que trasciende fronteras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia de Cencosud -->
+    <section id="historia" class="py-5 bg-white overflow-hidden">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="pe-lg-5">
+                        <h2 class="fw-bold mb-4 display-5 text-cenco-navy">Nuestra Historia</h2>
+                        <div class="timeline-animated">
+                            <div class="timeline-item-cenco">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold text-cenco-blue">1963: Los Comienzos</h5>
+                                    <p class="text-muted">Horst Paulmann funda 'Las Brisas', el inicio de un sueño que revolucionaría el retail.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-cenco">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold text-cenco-blue">1976: Nace Jumbo</h5>
+                                    <p class="text-muted">Inauguración del primer hipermercado Jumbo en Chile, marcando un estándar de calidad.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-cenco">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold text-cenco-blue">2007: Llegada al Perú</h5>
+                                    <p class="text-muted">Cencosud adquiere Wong y Metro, marcas icónicas y queridas por todos los peruanos.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item-cenco">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold text-cenco-blue">Hoy: Liderazgo Digital</h5>
+                                    <p class="text-muted">Somos un ecosistema físico y digital que conecta comunidades.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 fst-italic text-cenco-blue">"Recordar de dónde venimos nos da la fuerza para saber a dónde vamos."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <div class="history-blob"></div>
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="History" class="img-fluid rounded-5 shadow-lg position-relative z-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovación y Tecnología -->
+    <section class="py-5 bg-white overflow-hidden">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Innovación y Tecnología</h2>
+                    <p class="text-muted lead">Lideramos la transformación digital del retail en el Perú. Desde Cenco-Tech, desarrollamos soluciones que conectan a millones de clientes con sus productos favoritos a través de plataformas ágiles y seguras.</p>
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-cenco-light">
+                                <i class="bi bi-cpu fs-3 text-cenco-blue"></i>
+                                <span class="fw-bold">Inteligencia Artificial</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-cenco-light">
+                                <i class="bi bi-cloud-arrow-up fs-3 text-cenco-blue"></i>
+                                <span class="fw-bold">Cloud Retail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Tech Innovation" class="img-fluid rounded-5 shadow-lg photo-cenco">
+                        <div class="position-absolute bottom-0 start-0 m-4 p-3 bg-white rounded-4 shadow-sm border-start border-4 border-cenco-blue d-none d-md-block">
+                            <p class="small fw-bold mb-0 text-cenco-navy">Cenco-Tech Hub Perú</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas en Perú -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold">Nuestras Marcas en Perú</h2>
+            <div id="brandsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row" id="brands-slide-1">
+                            <!-- Se carga dinámicamente desde app.js (Cenco Mall) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de Nuestra Gente -->
+    <section id="historias" class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold">Nuestra Gente</h2>
+            <div class="row g-4" id="testimonials-container">
+                <!-- Se carga dinámicamente desde app.js -->
+            </div>
+            <div class="text-center mt-5">
+                <a href="stories.html" class="btn btn-outline-primary rounded-pill px-5">Conoce sus caminos de éxito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oportunidades de Crecimiento -->
+    <section id="vacantes" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Oportunidades de Crecimiento en Perú</h2>
+                <p class="text-muted">Inicia tu ruta en los cargos que están transformando Cencosud.</p>
+                <p class="small fst-italic text-cenco-blue">"Tu esfuerzo hoy es el talento que Cencosud mañana celebrará."</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="job-card growth-card border-0 shadow-sm" style="border-top: 5px solid var(--cenco-blue) !important;">
+                        <img src="https://peruretail.sfo3.cdn.digitaloceanspaces.com/wp-content/uploads/photo5066910856717118192-1140x570.jpg" alt="Supermercado" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover;">
+                        <h4 class="fw-bold">Servicios de Tienda (Wong/Metro)</h4>
+                        <p class="text-muted">Sé el primer contacto con nuestros clientes. Inicia como cajero o atención al cliente y crece hacia la gestión operativa.</p>
+                        <a href="dashboard.html" class="btn btn-link text-cenco-blue fw-bold text-decoration-none p-0">Postular ahora <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="job-card growth-card border-0 shadow-sm" style="border-top: 5px solid var(--cenco-orange) !important;">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=400&q=80" alt="Logistica" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover;">
+                        <h4 class="fw-bold">Analista Logístico Perú</h4>
+                        <p class="text-muted">Optimiza la cadena de suministro nacional en nuestros centros de Villa El Salvador y Huachipa.</p>
+                        <a href="dashboard.html" class="btn btn-link text-cenco-orange fw-bold text-decoration-none p-0">Postular ahora <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="job-card growth-card border-0 shadow-sm" style="border-top: 5px solid var(--cenco-green) !important;">
+                        <img src="https://images.ctfassets.net/wp1lcwdav1p1/7cQ8R8tOQaMfY3urSZweLl/27058cb781d071aa0301d5b411de77b8/GettyImages-960938238_how_to_become_a_web_developer.jpeg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive" alt="Tech" class="img-fluid rounded-4 mb-4" style="height: 180px; width: 100%; object-fit: cover;">
+                        <h4 class="fw-bold">Desarrollador Cenco-Tech Hub</h4>
+                        <p class="text-muted">Crea las soluciones digitales que usan millones. Únete al equipo tecnológico en San Borja.</p>
+                        <a href="dashboard.html" class="btn btn-link text-cenco-green fw-bold text-decoration-none p-0">Postular ahora <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Trabajo -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Nuestras Áreas de Trabajo</h2>
+                <p class="text-muted">Descubre dónde puedes dejar tu huella en Cencosud Perú.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-cart4 fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Supermercados</h6>
+                        <p class="small text-muted mb-0">Wong y Metro: Ventas y Perecederos.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-truck fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Logística</h6>
+                        <p class="small text-muted mb-0">Distribución y Última Milla.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-laptop fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Tecnología</h6>
+                        <p class="small text-muted mb-0">Ecommerce y Cenco-Tech.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-bag-heart fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Cenco Mall Perú</h6>
+                        <p class="small text-muted mb-0">Moda, Belleza y Experiencia.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-person-gear fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Gestión Humana</h6>
+                        <p class="small text-muted mb-0">Finanzas, Legal y Personas.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="job-card">
+                        <i class="bi bi-building-check fs-1 text-cenco-blue mb-3 d-block"></i>
+                        <h6 class="fw-bold">Operaciones</h6>
+                        <p class="small text-muted mb-0">Malls y Servicios Centrales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Registro (Mi Ruta) -->
+    <section id="quiero-crecer" class="py-5" style="background: linear-gradient(135deg, var(--cenco-light-blue-bg) 0%, #ffffff 100%);">
+        <div class="container py-5" style="max-width: 900px;">
+            <div class="inst-card shadow-lg border-0 overflow-hidden p-0">
+                <div class="bg-cenco-navy p-4 text-center text-white">
+                    <h2 class="mb-1 fw-bold">Inscripción a Mi Ruta Cencosud</h2>
+                    <p class="mb-0 opacity-75">Tu futuro comienza aquí. Completa tu perfil para iniciar.</p>
+                </div>
+                <div class="p-5 text-center">
+                    <div class="mb-5">
+                        <i class="bi bi-rocket-takeoff-fill display-1 text-cenco-blue mb-4"></i>
+                        <h3 class="fw-bold text-cenco-navy">¿Listo para el siguiente nivel?</h3>
+                        <p class="text-muted lead">Usa nuestro nuevo Dashboard Interactivo para gestionar tu postulación, ver tus puntos y descubrir beneficios exclusivos.</p>
+                    </div>
+                    
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="dashboard.html" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg">
+                            <i class="bi bi-speedometer2 me-2"></i>Ir al Dashboard / Registro
+                        </a>
+                        <a href="game.html" class="btn btn-outline-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+                            Cenco-Play (Juegos)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cenco-Dashboard -->
+    <section id="dashboard" class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold">Cenco-Dashboard</h2>
+            <div class="text-center mb-4">
+                <div class="btn-group shadow-sm">
+                    <button class="btn btn-outline-primary active" id="btn-candidato" onclick="switchRole('candidato')">Candidato</button>
+                    <button class="btn btn-outline-primary" id="btn-cliente" onclick="switchRole('cliente')">Cliente</button>
+                </div>
+            </div>
+            
+            <div id="view-candidato" class="role-view">
+                <div class="inst-card">
+                    <h4 class="fw-bold text-cenco-navy mb-3">Progreso de mi Ruta</h4>
+                    <div class="progress mb-3" style="height: 35px; border-radius: 20px;">
+                        <div id="candidate-progress" class="progress-bar bg-success progress-bar-striped progress-bar-animated font-black" style="width: 100%">100% - ¡RUTA COMPLETADA! 🔥</div>
+                    </div>
+                    <ul class="list-unstyled fw-bold text-success fs-5" id="candidate-steps">
+                        <li id="step-reg"><i class="bi bi-check-circle-fill me-2"></i>Inscripción Exitosa</li>
+                        <li id="step-game"><i class="bi bi-check-circle-fill me-2"></i>Trivia Cenco deborada</li>
+                        <li><i class="bi bi-check-circle-fill me-2"></i>Entrevista con RRHH Aprobada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="view-cliente" class="role-view d-none">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="inst-card h-100">
+                            <h5>Beneficios Tarjeta Cencosud</h5>
+                            <div class="d-flex align-items-center gap-3 mt-3">
+                                <div class="fs-1 text-warning"><i class="bi bi-credit-card-fill"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Bonus Activo</h6>
+                                    <p class="small text-muted mb-0">Canje inmediato de puntos.</p>
+                                </div>
+                            </div>
+                            <a href="game.html" class="btn btn-cenco btn-sm mt-3">Jugar para Bonus</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="inst-card h-100">
+                            <h5>Mis Cenco-Puntos</h5>
+                            <h2 class="fw-bold text-cenco-blue" id="client-points">12,450</h2>
+                            <p class="small text-muted">Aprovecha los descuentos en Wong, Metro y Cenco Mall.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Corporativo -->
+    <footer class="bg-cenco-navy text-white pt-5">
+        <div class="container py-5 position-relative z-1">
+            <div class="row g-5 text-center text-lg-start">
+                <div class="col-lg-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Cencosud_logo.svg/1280px-Cencosud_logo.svg.png" alt="Logo" height="100" class="mb-4 brightness-0 invert"
+                        style="filter: brightness(0) invert(1);">
+                    <p class="text-white-50 mb-4" style="max-width: 450px; font-size: 0.95rem; line-height: 1.8;">
+                        Líderes en retail en América Latina, comprometidos con el desarrollo,
+                        la innovación y el bienestar de nuestra gran familia de colaboradores.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-4 mt-4">
+                        <a href="https://www.linkedin.com/company/cencosud-s-a-/" target="_blank"
+                            rel="noopener noreferrer" class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/puntoscencosud" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/LatidoCencosud" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@TarjetaCencosudPe" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-uppercase mb-4 text-cenco-blue tracking-wider">Navegación</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-3"><a href="#"
+                                class="text-decoration-none text-white-50 hover-text-white">Inicio</a></li>
+                        <li class="mb-3"><a href="#historias"
+                                class="text-decoration-none text-white-50 hover-text-white">Nuestra Gente</a></li>
+                        <li class="mb-3"><a href="#vacantes"
+                                class="text-decoration-none text-white-50 hover-text-white">Oportunidades</a></li>
+                        <li class="mb-3"><a href="javascript:void(0)" onclick="openGame()"
+                                class="text-decoration-none text-white-50 hover-text-white">Cenco-Play</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-uppercase mb-4 text-cenco-blue tracking-wider">Contacto Interno</h6>
+                    <div class="d-flex align-items-center gap-2 mb-3 text-white-50 small">
+                        <i class="bi bi-envelope-fill text-cenco-blue"></i>
+                        <span>talentohumano@cencosud.com</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-3 text-white-50 small">
+                        <i class="bi bi-telephone-fill text-cenco-blue"></i>
+                        <span>Anexo: 4500</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 text-white-50 small">
+                        <i class="bi bi-geo-alt-fill text-cenco-blue"></i>
+                        <span>Santiago, Chile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Barra Tricolor Cencosud -->
+        <a href="https://www.cencosud.pe" target="_blank" class="huincha-tricolor text-decoration-none d-flex" title="Visitar Cencosud Perú">
+            <div class="huincha-blue"></div>
+            <div class="huincha-light-blue"></div>
+            <div class="huincha-orange"></div>
+        </a>
+    </footer>
+
+    <!-- Dependencias JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Enlace al archivo JavaScript principal -->
+    <script type="module" src="app.js"></script>
+
+    <!-- BOXI CHAT UI -->
+    <div id="boxi-button" onclick="toggleChat()">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Boxi">
+        <span class="notification-badge">1</span>
+    </div>
+
+    <div id="boxi-chat" class="shadow-lg">
+        <div id="boxi-header">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" width="30" alt="Boxi">
+                <div>
+                    <div class="fw-bold">Boxi 🤖</div>
+                    <div style="font-size: 10px; opacity: 0.8;">Asistente Cencosud</div>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="btn-close btn-close-white ms-auto" style="font-size: 10px;"></button>
+        </div>
+        <div id="boxi-messages">
+            <div class="bot">¡Hola! 👋 Soy Boxi, tu asistente de Cencosud Perú. ¿En qué puedo apoyarte hoy?</div>
+            <div class="chat-options mt-2">
+                <button class="option-btn" onclick="sendQuickOption('¿Cómo postular?')">¿Cómo postular?</button>
+                <button class="option-btn" onclick="sendQuickOption('Beneficios Cenco')">Beneficios Cenco</button>
+                <button class="option-btn" onclick="sendQuickOption('Nuestras marcas')">Nuestras marcas</button>
+            </div>
+        </div>
+        <div class="p-2 border-top bg-light d-flex align-items-center">
+            <input id="boxi-input" placeholder="Escribe tu consulta..." class="form-control form-control-sm border-0 bg-transparent">
+            <button class="btn btn-link text-cenco-blue p-1" onclick="handleSend()"><i class="bi bi-send-fill"></i></button>
+        </div>
+    </div>
+
+    <div id="boxi-overlay">
+        <div id="boxi-welcome" class="shadow-lg">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Boxi">
+            <h2 class="fw-bold text-cenco-navy mt-3 text-bounce">¡Hola! Soy Boxi</h2>
+            <p class="text-muted">Estoy aquí para guiarte en tu camino por Cencosud Perú. ¡Comencemos!</p>
+            <button class="btn btn-cenco rounded-pill px-5" onclick="cerrarBoxi()">Comenzar</button>
+        </div>
+    </div>
+
+<script>
+    
+(function () {
+  // ===== Estado interno =====
+  const state = {
+    openedOnce: false,
+    lastTopic: null
+  };
+
+  // ===== Utilidades =====
+  function $(id) {
+    return document.getElementById(id);
+  }
+
+  function scrollToBottom() {
+    const box = $("boxi-messages");
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function addMessage(type, text) {
+    const box = $("boxi-messages");
+    const div = document.createElement("div");
+    div.className = type; // "user" o "bot"
+    div.innerText = text;
+    box.appendChild(div);
+    scrollToBottom();
+  }
+
+  function randomPick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  // ===== Base de conocimiento =====
+  const KB = [
+    {
+      topic: "postular",
+      keywords: ["postular", "inscribirme", "registro"],
+      answers: [
+        "¡Hola! Puedes conocer todas nuestras oportunidades laborales y postular directamente desde nuestra sección de vacantes.",
+        "Dirígete a la sección 'Oportunidades' o entra al Dashboard para registrarte.",
+        "Empieza tu ruta en el botón 'Dashboard / Iniciar Ruta'."
+      ],
+      action: "dashboard"
+    },
+    {
+      topic: "beneficios",
+      keywords: ["beneficios", "ventajas", "tarjeta", "puntos", "descuentos"],
+      answers: [
+        "¡Hola! En Cencosud ofrecemos excelentes beneficios como descuentos corporativos, convenios educativos y programas de bienestar para potenciar tu talento.",
+        "Puedes acumular puntos y canjearlos en Wong, Metro y Cenco Mall.",
+        "¡Hola! En Cencosud Perú ofrecemos diversos beneficios para potenciar tu bienestar y crecimiento profesional.",
+        "Hay promociones y beneficios especiales para clientes frecuentes."
+      ]
+    },
+    {
+      topic: "marcas",
+      keywords: ["marcas", "tiendas", "wong", "metro", "cenco mall"],
+      answers: [
+        "En Cencosud Perú operamos con marcas líderes como Wong, Metro, Cenco Malls y Banco Cencosud. Puedes conocer más sobre nuestra trayectoria y evolución aquí:",
+        "¡Hola! Nuestras principales marcas en Perú son Wong, Metro, Paris y Banco Cencosud. Puedes conocer más sobre nuestra trayectoria y marcas en nuestra línea de tiempo aquí:",
+        "En Cencosud Perú contamos con marcas líderes como Wong, Metro, Paris, Banco Cencosud y Shopping Centers. Puedes conocer más sobre nuestra evolución aquí:"
+      ],
+       action: "historia"
+    },
+    {
+      topic: "historia",
+      keywords: ["historia", "inicio", "origen"],
+      answers: [
+        "¡Hola! En Cencosud tenemos una trayectoria llena de crecimiento y compromiso en el sector retail de Latinoamérica. Puedes conocer nuestros hitos más importantes aquí:",
+        "¡Hola! Cencosud inició su historia en Chile con la visión de Horst Paulmann. Puedes conocer todos los hitos de nuestra trayectoria en nuestra línea de tiempo aquí:",
+        "¡Hola! Te invito a conocer los hitos más importantes de nuestra trayectoria en nuestra línea de tiempo."
+      ],
+      action: "historia"
+    },
+    {
+      topic: "vacantes",
+      keywords: ["vacantes", "puestos","trabajo", "oportunidades", "empleo"],
+      answers: [
+        "¡Qué bueno que quieras formar parte de nuestro equipo! Puedes revisar todas nuestras oportunidades laborales aquí:",
+        "Puedes ver oportunidades en la sección 'Oportunidades'.",
+        "¡Hola! Puedes revisar todas nuestras oportunidades laborales disponibles aquí",
+        "¡Hola! Soy Boxi. Puedes conocer nuestras oportunidades laborales y postular aquí:"
+      ],
+      action: "vacantes"
+    },
+     {
+      topic: "empresa",
+      keywords: ["empresa", "cencosud", "que es"],
+      answers: [
+        "¡Hola! Soy Boxi. Cencosud es uno de los grupos de retail más grandes y prestigiosos de América Latina. En Perú, operamos marcas líderes como Wong, Metro y Cenco Malls, enfocándonos en brindar la mejor experiencia de servicio y calidad."
+       
+      ]
+    },
+    {
+      topic: "saludo",
+      keywords: ["hola", "buenas", "hey", "que tal"],
+      answers: [
+        "¡Hola! 👋 ¿En qué puedo ayudarte?",
+        "¡Hola! Soy Boxi, tu asistente de Cencosud Perú. ¿En qué puedo ayudarte hoy?",
+        "¡Bienvenido! ¿Qué deseas saber?",
+        "¡Hola! Soy Boxi, el asistente virtual de Cencosud Perú. ¿En qué puedo ayudarte hoy? Si buscas trabajo, puedo mostrarte nuestras oportunidades vigentes."
+      ]
+    }
+  ];
+
+  const FALLBACK = [
+    "No entendí bien 🤔 ¿puedes reformularlo?",
+    "Interesante… ¿puedes darme más detalles?",
+    "No tengo esa info aún, pero puedo ayudarte con postulaciones, beneficios o marcas."
+  ];
+
+  // ===== Motor de respuesta =====
+  function getResponse(text) {
+    const t = normalize(text);
+
+    // match por keywords
+    for (const item of KB) {
+      if (item.keywords.some(k => t.includes(k))) {
+        state.lastTopic = item.topic;
+        return {
+          text: randomPick(item.answers),
+          action: item.action || null
+        };
+      }
+    }
+
+    // fallback con leve variación según contexto previo
+    if (state.lastTopic === "postular") {
+      return { text: "Si buscas trabajo, entra al Dashboard para registrarte 🚀" };
+    }
+
+    if (t.includes("hola") && t.includes("trabajo")) {
+  return { text: "¡Hola! Soy Boxi, tu asistente de Cencosud Perú. ¿En qué puedo ayudarte hoy?" };
+}
+
+    return { text: randomPick(FALLBACK) };
+  }
+
+  // ===== Acciones (navegación opcional) =====
+  window.navigateTo = function (sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      window.toggleChat();
+    } else if (sectionId === "dashboard") {
+      window.location.href = "dashboard.html";
+    } else if (sectionId === "game") {
+      window.location.href = "game.html";
+    }
+  };
+
+  function addActionButton(container, action) {
+    if (!action) return;
+    const map = {
+      historia: "Ver nuestra Historia",
+      vacantes: "Ver Vacantes",
+      dashboard: "Ir al Dashboard"
+    };
+    const btn = document.createElement("button");
+    btn.className = "btn btn-sm btn-cenco rounded-pill mt-2";
+    btn.innerText = map[action] || "Ir";
+    btn.onclick = function () {
+      window.navigateTo(action);
+    };
+    container.appendChild(btn);
+  }
+
+  // ===== API global (onclick) =====
+  window.toggleChat = function () {
+    const chat = $("boxi-chat");
+    const visible = chat.style.display === "flex";
+    chat.style.display = visible ? "none" : "flex";
+
+    if (!visible && !state.openedOnce) {
+      state.openedOnce = true;
+      const badge = document.querySelector(".notification-badge");
+      if (badge) badge.style.display = "none";
+    }
+  };
+
+  window.cerrarBoxi = function () {
+    const overlay = $("boxi-overlay");
+    overlay.classList.add("fade-out");
+    setTimeout(() => (overlay.style.display = "none"), 300);
+  };
+
+  window.sendQuickOption = function (option) {
+    $("boxi-input").value = option;
+    window.handleSend();
+  };
+
+  window.handleSend = function () {
+    const input = $("boxi-input");
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage("user", text);
+
+    // loading breve
+    const box = $("boxi-messages");
+    const loading = document.createElement("div");
+    loading.className = "bot";
+    loading.innerHTML = '<span class="spinner-grow spinner-grow-sm"></span> Pensando...';
+    box.appendChild(loading);
+    scrollToBottom();
+
+    setTimeout(() => {
+      const { text: reply, action } = getResponse(text);
+      loading.innerHTML = reply;
+      addActionButton(loading, action);
+      scrollToBottom();
+    }, 400);
+
+    input.value = "";
+  };
+
+  // Enter para enviar
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = $("boxi-input");
+    if (!input) return;
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        window.handleSend();
+      }
+    });
+  });
+
+})();
+
+</script>
+
+<script type="module" src="boxi.js"></script>
+
+
+    
+</body>
+</html>
