@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile information for candidates and clients.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["candidato", "cliente"] },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email", "name", "role", "createdAt"]
+    },
+    "Registration": {
+      "title": "Candidate Registration",
+      "description": "Detailed registration form for candidates.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "password": { "type": "string" },
+        "currentArea": { "type": "string" },
+        "targetArea": { "type": "string" },
+        "recommendations": { "type": "string" },
+        "timestamp": { "type": "object" }
+      },
+      "required": ["name", "email", "currentArea", "targetArea"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles managed by authentication."
+    },
+    "/registrations/{regId}": {
+      "schema": "Registration",
+      "description": "Candidate registrations for HR review."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+    function isSignedIn() { 
+      return request.auth != null; 
+    }
+    function isOwner(userId) { 
+      return isSignedIn() && request.auth.uid == userId; 
+    }
+    function incoming() { 
+      return request.resource.data; 
+    }
+    function existing() { 
+      return resource.data; 
+    }
+
+    // Entity Validations
+    function isValidUser(data) {
+      return data.keys().hasAll(['userId', 'email', 'name', 'role', 'createdAt'])
+        && data.keys().size() <= 7
+        && data.userId == request.auth.uid
+        && data.email is string && data.email.size() <= 200
+        && data.name is string && data.name.size() <= 100
+        && data.role in ['candidato', 'cliente']
+        && data.createdAt is string;
+    }
+
+    function isValidRegistration(data) {
+      return data.keys().hasAll(['name', 'email', 'currentArea', 'targetArea'])
+        && data.name is string && data.name.size() <= 100
+        && data.email is string && data.email.size() <= 200
+        && data.currentArea is string && data.currentArea.size() <= 100
+        && data.targetArea is string && data.targetArea.size() <= 100;
+    }
+
+    // Collection: Users
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(incoming());
+      allow update: if isOwner(userId) && isValidUser(incoming())
+        && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'role', 'status', 'updatedAt']);
+    }
+
+    // Collection: Registrations
+    match /registrations/{regId} {
+      // Allow creation by anyone (public recruitment form) but validate shape
+      allow create: if isValidRegistration(incoming());
+      // Only internal system or future admin should read (currently restricted)
+      allow read: if false; 
+    }
+  }
+}

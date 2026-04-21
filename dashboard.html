@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenco-Dashboard | Mi Ruta</title>
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: #f0f2f5; font-family: 'Inter', sans-serif; }
+        .fw-black { font-weight: 900; }
+        .text-navy { color: #002d72; }
+        .rounded-32 { border-radius: 32px; }
+        .rounded-50 { border-radius: 50px; }
+    </style>
+</head>
+<body>
+
+    <!-- CONTENEDOR LOGIN -->
+    <div id="login-container" class="min-vh-100 d-flex align-items-center justify-content-center p-4">
+        <div class="bg-white p-5 rounded-32 shadow-lg w-100" style="max-width: 500px; border: 1px solid #eee;">
+            <div class="text-center mb-5">
+                <img src="/input_file_0.png" alt="Cencosud" class="img-fluid mb-4" style="height: 60px;">
+                <h1 id="auth-title" class="fw-black text-navy h2 mb-2">Acceso Seguro</h1>
+                <p class="text-muted small">Panel de Crecimiento Cencosud</p>
+            </div>
+
+            <!-- Selector de Roles (Solo Visible en Registro) -->
+            <div id="role-selection" class="d-flex gap-2 p-1 bg-light rounded-pill mb-4 border" style="display: none;">
+                <button type="button" id="role-candidato" onclick="setRole('candidato')" class="role-btn flex-fill py-2 rounded-pill fw-bold bg-primary text-white border-0 transition-all">Candidato</button>
+                <button type="button" id="role-cliente" onclick="setRole('cliente')" class="role-btn flex-fill py-2 rounded-pill fw-bold bg-light text-muted border-0 transition-all">Cliente</button>
+            </div>
+
+            <form id="login-form">
+                <div id="register-fields" style="display: none;">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-navy ms-2">Nombre Completo</label>
+                        <input type="text" id="name" class="form-control rounded-pill p-3 border-2" placeholder="Tu nombre">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-navy ms-2">Correo Electrónico</label>
+                    <input type="email" id="email" class="form-control rounded-pill p-3 border-2" required placeholder="correo@ejemplo.com">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-navy ms-2">Contraseña</label>
+                    <input type="password" id="password" class="form-control rounded-pill p-3 border-2" required minlength="6">
+                </div>
+
+                <div id="error-msg" class="alert alert-danger py-2 rounded-4 text-center small" style="display: none;"></div>
+
+                <button type="submit" id="auth-submit-btn" class="btn btn-primary w-100 rounded-pill py-3 fw-black fs-5 shadow-sm">Entrar</button>
+            </form>
+
+            <div class="mt-4 text-center">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <hr class="flex-grow-1"> <span class="text-muted small fw-bold">O CONTINÚA CON</span> <hr class="flex-grow-1">
+                </div>
+                
+                <button id="google-login-btn" class="btn btn-outline-secondary w-100 rounded-pill py-3 fw-bold d-flex align-items-center justify-content-center gap-2 border-2">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
+                    Google
+                </button>
+
+                <div class="mt-4">
+                    <button id="toggle-auth-btn" onclick="toggleAuthMode()" class="btn btn-link text-decoration-none fw-bold text-primary">¿No tienes cuenta? Regístrate aquí</button>
+                </div>
+                <div class="mt-2 text-center">
+                    <a href="index.html" class="text-muted small text-decoration-none fw-bold shadow-sm p-2 rounded-pill"><i class="bi bi-arrow-left-circle me-1"></i>Volver al Inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DASHBOARD -->
+    <div id="dashboard-container" class="min-vh-100 d-none flex-column align-items-center p-4">
+        <nav class="w-100 max-w-1140 d-flex justify-content-end mb-4">
+            <a href="index.html" class="btn btn-white bg-white border rounded-pill px-4 fw-bold text-muted shadow-sm"><i class="bi bi-x-lg me-2"></i>Regresar</a>
+        </nav>
+
+        <header class="text-center mb-5">
+            <img src="/input_file_0.png" alt="Cencosud" class="h-16 mx-auto mb-4" style="height: 60px;">
+            <h1 class="display-3 fw-black text-navy mb-2">Mi Ruta Dashboard</h1>
+            <p class="text-muted fst-italic">"El único límite para tu crecimiento eres tú mismo."</p>
+            
+            <div class="mt-4 d-inline-flex bg-white p-2 rounded-pill shadow-sm border">
+                <div id="user-role-tag" class="bg-primary text-white px-5 py-2 rounded-pill fw-black">Candidato</div>
+            </div>
+        </header>
+
+        <main id="dashboard-content" class="w-100 max-w-1140 d-flex justify-content-center">
+            <!-- Aquí se inyecta el contenido dinámico mediante dashboard.js -->
+        </main>
+
+        <button id="logout-btn" class="btn btn-white bg-white rounded-circle shadow-lg position-fixed bottom-0 end-0 m-4 p-3 border" style="width: 60px; height: 60px;">
+            <i class="bi bi-box-arrow-right fs-4 text-primary"></i>
+        </button>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

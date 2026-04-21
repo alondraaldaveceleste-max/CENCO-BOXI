@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias de Crecimiento | Cencosud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --cenco-blue: #0074FF;
+            --cenco-green: #61d3b0;
+            --cenco-grey: #5b6d91;
+            --cenco-navy: #002882;
+            --cenco-white: #ffffff;
+            --cenco-light-blue-bg: #dce1eb;
+            --cenco-magenta: #ea2a78;
+        }
+        body { font-family: 'Montserrat', sans-serif; color: var(--cenco-navy); background: #f8f9fa; margin: 0; padding: 0; }
+        
+        /* Welcome Header Style based on Image */
+        .welcome-section {
+            background: linear-gradient(135deg, #0074FF 0%, #0056b3 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            border-radius: 40px;
+            position: relative;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .welcome-logo-container {
+            background: white;
+            width: 140px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -60px auto 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .logo-img { height: 40px; }
+        .welcome-subtitle { font-weight: 300; font-size: 1.2rem; margin-bottom: 5px; opacity: 0.9; }
+        .welcome-title { font-size: 3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+        .welcome-description { font-weight: 400; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; opacity: 0.95; }
+        
+        /* Welcome Story Card Style */
+        .welcome-card {
+            background: #eef2f6;
+            border-radius: 50px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .welcome-card:hover { transform: translateY(-5px); }
+        .card-photo-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .card-photo-container img { width: 100%; height: 100%; object-fit: cover; }
+        .card-info { flex-grow: 1; padding: 0 30px; text-align: left; color: #444; }
+        .card-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 2px; color: var(--cenco-navy); }
+        .card-job { font-size: 1rem; color: #666; font-weight: 500; }
+        .card-brand {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+        .card-brand img { width: 100%; height: auto; }
+
+        .welcome-footer-text { font-size: 1.1rem; font-weight: 700; margin-top: 40px; margin-bottom: 10px; }
+        .comm-footer { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: white; opacity: 0.8; margin-bottom: 20px; }
+
+        /* Story Details Accordion/Panel */
+        .story-details {
+            background: white;
+            margin-top: -15px;
+            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+            padding: 30px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top: 1px solid #eee;
+            display: none; /* Dynamic visibility */
+        }
+        .story-details.active { display: block; animation: slideDown 0.4s ease forwards; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-return {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: var(--cenco-blue);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        .btn-return:hover { background: var(--cenco-blue); color: white; }
+
+        .huincha-tricolor { height: 10px; display: flex; width: 100%; }
+        .huincha-blue { width: 80%; background-color: var(--cenco-blue); }
+        .huincha-light-blue { width: 10%; background-color: #669eff; }
+        .huincha-orange { width: 10%; background-color: #ff6f0d; }
+
+        footer { position: relative; overflow: hidden; }
+        .hover-text-white:hover { color: white !important; padding-left: 5px; transition: all 0.2s ease; }
+    </style>
+</head>
+<body>
+
+    <a href="./index.html" class="btn-return" onclick="window.location.href='./index.html'; return true;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg>
+        <span>Volver al Inicio</span>
+    </a>
+
+    <header class="welcome-section">
+        <div class="welcome-logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Cencosud_logo.svg/1280px-Cencosud_logo.svg.png" alt="Cencosud" class="logo-img">
+        </div>
+        
+        <p class="welcome-subtitle">Novedades en el equipo</p>
+        <h1 class="welcome-title">¡Bienvenidos<br>a Cencosud!</h1>
+        <p class="welcome-description">
+            Te invitamos a conocer a quienes se integran a nuestra Compañía y sus inspiradoras trayectorias.
+        </p>
+
+        <div class="container pb-4">
+            <!-- Historias en formato Welcome Cards -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    
+                    <!-- Story 1 -->
+                    <div class="welcome-card" onclick="toggleDetails('details-1')">
+                        <div class="card-photo-container">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ana">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Ana Martínez</h3>
+                            <p class="card-job">Gerente de Tienda - Metro</p>
+                        </div>
+                        <div class="card-brand">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6QSuZ78m6NwzkQ8lzD-FbyBz_sTeBkG0lAw&s" alt="Metro">
+                        </div>
+                    </div>
+                    <div id="details-1" class="story-details">
+                        <div class="row g-4 text-start">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-heart-fill text-danger me-2"></i>Motivación</h6>
+                                <p class="text-muted small">"Mi motor diario es mi familia y el deseo de romper mis propios límites. Ver cómo una gestión eficiente transforma la experiencia de compra de nuestros clientes me llena de orgullo."</p>
+                                <h6 class="fw-bold text-dark"><i class="bi bi-briefcase-fill text-cenco-blue me-2"></i>Carrera</h6>
+                                <p class="text-muted small">Especialista en Liderazgo Operativo. Su rol se compone de optimización de inventarios y desarrollo de equipos.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-calendar-event-fill text-cenco-blue me-2"></i>Eventos</h6>
+                                <p class="text-muted small">Lideró la inauguración de la tienda bandera en 2022.</p>
+                                <h6 class="fw-bold text-cenco-blue mb-2">Puestos:</h6>
+                                <p class="small text-muted">Cajera -> Supervisora -> Líder -> Gerente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="welcome-card" onclick="toggleDetails('details-2')">
+                        <div class="card-photo-container">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Carlos">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Carlos Ruiz</h3>
+                            <p class="card-job">Líder Logístico Regional</p>
+                        </div>
+                        <div class="card-brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Logo_Wong_Cencosud.png" alt="Jumbo">
+                        </div>
+                    </div>
+                    <div id="details-2" class="story-details">
+                        <div class="row g-4 text-start">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-lightning-fill text-warning me-2"></i>Motivación</h6>
+                                <p class="text-muted small">"Me apasiona la eficiencia. Saber que un proceso bien diseñado asegura que un producto llegue a tiempo es lo que me mueve."</p>
+                                <h6 class="fw-bold text-dark"><i class="bi bi-diagram-3-fill text-cenco-blue me-2"></i>Carrera</h6>
+                                <p class="text-muted small">Experto en Inteligencia Logística y Lean Management.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-award-fill text-cenco-blue me-2"></i>Eventos</h6>
+                                <p class="text-muted small">Rediseño total del CD principal (2021).</p>
+                                <h6 class="fw-bold text-cenco-blue mb-2">Puestos:</h6>
+                                <p class="small text-muted">Operario -> Auditor -> Supervisor -> Líder Regional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="welcome-card" onclick="toggleDetails('details-3')">
+                        <div class="card-photo-container">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Elena">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Elena Paz</h3>
+                            <p class="card-job">Senior Regional Talent</p>
+                        </div>
+                        <div class="card-brand">
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8HBhMIBxMVERUVGRYQFxYVEw8QFRARGxoYHBcXGR0kKDQiJB8xJxkXITEtMTU3LzAwGR81RD84QzQtOjcBCgoKDg0OGQ8QGjchHSA3Ly03KysuLS03Ny8rNy8vNys3Ny03LS83LTA3MjE1LTcvNystLTItLTctNS0uKyswLf/AABEIAMgAyAMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQYEBQcDCAL/xABEEAACAQMCAwUDBwkFCQAAAAAAAQIDBBEFEgYhMQcTQVFhcYGRFBUiMnKhsTU2QoKywcLR8AhSc9LhFhczNFNidJKT/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAKhEBAAICAgEDAwIHAAAAAAAAAAECAxEEIRITMUEFUXEioRQjMjNCYZH/2gAMAwEAAhEDEQA/AOWgA9tIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAldQF1AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAldQF1AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAldQF1AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAldQF1AEAAAAAALBwXwtW4s1f5HbPZGK3VKjWVTh+9vwR16XB/DnDVKNHVu63tda9Z75+u3KXwRjkzVpOveRwEHa9br8K6dp069vToV5pPZTpupNzn4J88JerKZ2a8BviyvK6vW4W9N7W443VZ8nsj5csZfqvcjNHjNpjQo4O+3X+yugV/my6jbKa+i1KlO5lF/908PD9rNRxp2a2l/o71rhDCe3vdkJOdOtDx2eUvTpyxyKxyY33EwOMg23C+gVuJdZhpllycvpSk84p019aT/AK64OzPh/h3gm3jT1rupzks5rxdec/VQSeF4ckXyZopOveRwMHedQ4I0bjLSnd8MunTmuUZ0cxgpeEalPw+CZxG606ta6nLTa0H3sZ904rm3POMLzGPLW4xAdu4c7LrDSNMV/wAXSU5YUpKVR0qNHyWU1l+ucehmSocJRWW7Tl5Tk/3lJ5Nd9RMjgoLreaXb8Y8brT+D6ao0Ukt2JJbY531mnz8Ukvs9MnSHw1w9wVaR+eu7lJr61dOtOp5tU0ny9iLWzxXXXc/A4EDvj4W4f41spS0Pu4SX6VBOlKm/DdTeOXtXvOWLhmWkcWy0jWEm4Jyj121l+i16Y5+7BbDkjLbx9pZZssYsc3n2hVgWjjCwoWtGFW3ioSb24iklKOOuP66lXN8lPCdM+LyI5GOMkRrYACjpSuoC6gCAAAAAHcuwOlBcPXFaON7rbX57FCLj98pnHdfu619rVa41Ft1HOW7Ocxecbfd0x6Fj7MuMlwnqso3eXQq4VTHNwa+rNL0y8ry9h1HUeDNF42r/ADpa1PpT+lKVvUgt785xaeH7k/M45n0sk2tHUj57PozsuoZ7NqMLJqE5xrPdjOKjnNbmvTl8DS3/AGP6bbWNSvTq3LcYSms1KOMpN/3CudkfHVLRIvRdZlspSlvp1H9WnN9Yy8ovz8Hnz5MtvVp+j4G0lwHoWgSdTii972fWUXNU3J+P0I5qfee1XtQ0vh7Tvm/hahOajnZlOnSUnnnltzfP0M/VOybTtYuvl+m1pUoze/FPZUpvP9zyXvaPHXdG4f4H0WULylC4qtfRjOW+tVl4dPqr1SXxM4tW2omZmfshq+wClGpd3tzJLclRin5KTqN/sr4FC7Qrqd3xreTrttqrOmvSEHtivgjoP9n+SlO/aSjn5O8LOF/xuXM5xxv+eN7/AORW/bZtT+9ZK19hl1OlxdK2g3tqUpbl4NxacX7Vz+LN9qVpSfb1R7xLElGq+nOpGjLa/jGPwKv2K1Y0uOIqo0t1OpFZeN0uXJfBmT2s31TTe0lX1o8Tpxo1Iv1XMi1ZnLMR8wNj2+Xdb51t7Jtqj3bqpc8Sq7pJ+3CUf/b1OUn0Fa6to/aVpELbUtsKq593Kap1aU/F05eK/wBMox/9zOl/9W5/+lD/ACEY80Y6+No7gaL+z9Sg7i9rP66VGK81Fuo398Y/ApPaVc1bnji6d3nMajpxTzypxwoY93P3ll+VUuy/tDdC0dSpbyhCNRScJT2y57lhJZT/AHrxLzrvCOl9oMVq1lVxNpJ1KLi9y8FUi/Fe5kecVyec+0ocn7K7mrb8dWytM/Tk6c0s4lTcXuz7MZ9xa+32Eaeq2lenym4VItrrtjKLj98pfeW7ROF9L7OqMtUvKv08OPeVXHKXjGnFeL5dMs45x7xM+KuIJXyTjTilTpRfVU1nm/Vtt+/0LUn1MvlX2gmNtBWrTry3VpOT6ZbcmeYB2ERERqAAEJSuoC6gCAAAAAA93aVYUu+lCaj13bZYx7TwOhxrQt+HoVrhboxpwljzaSx9+DbFii+99aefz+Zbj+HjXflOlIp6Zc1Ke+FKbXXO2XMx1QnKt3Ki93Tbh7s+wtWl8UTur+NC4hFKT2pxzlN9M+ZsddvYaTH5XCCdSf0E/Rc+f9eRpGGk18onqHJP1Hk0yxivj7n21KoqheWFJziqtKPVtb4r34NfKTnLdNtt88tttl44e1x6pOVC4jFSS3cs4cej5P2ld1K1o2fELpV8qmpKTS67Ws4/cUvhrqLVnqW/H52S2S2LLXVojfXe4YFtZVrlZtoSkvNRbXxIubOra/8AMwlD2xaTLVfcT0rWnGnpkVPl6wjD0wZmjamtbt50buml58m4zReMFJ6i3bnv9R5FI9S+PVPz2ocIuclGCbb5JJNts9K9vUoY7+Eo56bouOfibGna/I+Jo28eajVgl7MrBtuOulH9f+EzjF+m1p+HZbm/z8eOsdXje1TPera1aEN9aE4rplxlFHgXfjH8jL7cfwZFMcWrM/Zbk8qcWXHjiN+SkGVYQryq5sFPPnDdle9GKdAy9L0KMtPhvaUXhJ889ZPHUYsUX9/aEc7mTx4rFY3a06j4Uq/oXEJ95qCqZfLM9zz72YhbYcTU69pOjqtPn02xTxJe/oVOWNz29PDPUjJStdeMr8TPlybjLXUx/wAlAAM3YAACV1AXUAQAAAAAF41T8zl/h0vxgUcs19rVCtw6rKDe/ZTj9V4zHbnn7jfDaIi23lfUcV73wzWN6tG2k0n8qUftw/aRYuOvqUf1/wCErNhVVC+p1qnSM4yfsTNxxRqtLUo01atvbuzlNdcfyJpaIxWg5GK883FeI6je5TwV+VpfYf4xP3q9l84cV/Jk8btuX5JRyzC4av6en37rXOUnFx5JvnlfyPS91eK4h+cbTmljk8rK24aJravpxE/dlkxZf4u96R/jqJ/23l7XtOHlGlTpbpNZ6LOPNyZk6Fq8tWnN93sjHC6uTbMO41XTtSgp3vVeDjU3L0zE87TiO2t6/c0YunSSeMR5ynlc/wAToi8Rb+qNPLtx75MMxOO05PmZ3+zX3354r/Fp/wAJm8ddKP6/8Jqbq/p1OIlfRzs3wlnDzhYzy9xYa+v2Nxj5Qt+Om6mpY+JlE1tFo3rcu3JXLivgyRSZ8a96/CkF34x/I0ftx/Bmk4gvLW5oRWnRUWnl4gocsG8q8RWVensrpyXlKnuWSMcVrFq791uXfLkthzRjnre4UcsWna5caXaRjdU3Kn0i3mD9ififrWdQsq9g4WEFGeU01TUGufmZVpxFb3loqGrx5+LcXOMvX0ZFKxW3VmvJy3zYom2GZjfcfP5hsLatb8SWclOHNcnnG6L8GmUW4pdxXlSf6Lcfgy3VNftNPtnDS45b6JRcY583kp85upNznzbeX7SORaJiPmT6ViyUm86mtJ9ol+QAcz2gAASuoC6gCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASuoC6gCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASuoC6gCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASuoC6gCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASuoC6gBhjDAAYYwwAGGMMABhjDAAYYwwAGGMMABhjDAAYYwwAGGMMABhjDAAYYwwAGGMMACUnkAAf/2Q==" alt="Cenco Mall">
+                        </div>
+                    </div>
+                    <div id="details-3" class="story-details">
+                        <div class="row g-4 text-start">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-people-fill text-cenco-blue me-2"></i>Motivación</h6>
+                                <p class="text-muted small">"El bienestar de nuestra gente. Cuando una persona se siente valorada, su potencial es ilimitado."</p>
+                                <h6 class="fw-bold text-dark"><i class="bi bi-mortarboard-fill text-cenco-blue me-2"></i>Carrera</h6>
+                                <p class="text-muted small">Especialista en Desarrollo Organizacional y Marca Empleadora.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold text-dark"><i class="bi bi-star-fill text-warning me-2"></i>Eventos</h6>
+                                <p class="text-muted small">Lanzamiento del Programa "Cenco-Talento".</p>
+                                <h6 class="fw-bold text-cenco-blue mb-2">Puestos:</h6>
+                                <p class="small text-muted">Asistente -> Analista -> Especialista -> Senior Regional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <p class="welcome-footer-text">¡Estamos felices que sean parte de nuestro equipo!</p>
+        <p class="comm-footer">COMUNICACIONES INTERNAS Y CULTURA</p>
+        
+        <div class="mt-5">
+            <a href="index.html" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-primary">
+                Finalizar y Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <script>
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            const all = document.querySelectorAll('.story-details');
+            all.forEach(d => {
+                if(d.id !== id) d.classList.remove('active');
+            });
+            el.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-cenco-navy text-white pt-5">
+        <div class="container py-5 position-relative z-1">
+            <div class="row g-5 text-center text-lg-start">
+                <div class="col-lg-6">
+                    <img src="https://www.cencosud.com/cencosud/site/artic/20220511/imag/foto_0000000120220511115822/logo_cencosud.png" alt="Logo" height="100" class="mb-4 brightness-0 invert"
+                        style="filter: brightness(0) invert(1);">
+                    <p class="text-white-50 mb-4" style="max-width: 450px; font-size: 0.95rem; line-height: 1.8;">
+                        Líderes en retail en América Latina, comprometidos con el desarrollo,
+                        la innovación y el bienestar de nuestra gran familia de colaboradores.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-4 mt-4">
+                        <a href="https://www.linkedin.com/company/cencosud-s-a-/" target="_blank"
+                            rel="noopener noreferrer" class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/puntoscencosud" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/LatidoCencosud" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@TarjetaCencosudPe" target="_blank" rel="noopener noreferrer"
+                            class="text-white fs-3 opacity-75 hover-opacity-100">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-uppercase mb-4 text-cenco-blue tracking-wider">Navegación</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-3"><a href="index.html"
+                                class="text-decoration-none text-white-50 hover-text-white">Inicio</a></li>
+                        <li class="mb-3"><a href="index.html#historias"
+                                class="text-decoration-none text-white-50 hover-text-white">Nuestra Gente</a></li>
+                        <li class="mb-3"><a href="index.html#vacantes"
+                                class="text-decoration-none text-white-50 hover-text-white">Oportunidades</a></li>
+                        <li class="mb-3"><a href="game.html"
+                                class="text-decoration-none text-white-50 hover-text-white">Cenco-Play</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-uppercase mb-4 text-cenco-blue tracking-wider">Contacto Interno</h6>
+                    <div class="d-flex align-items-center gap-2 mb-3 text-white-50 small">
+                        <i class="bi bi-envelope-fill text-cenco-blue"></i>
+                        <span>talentohumano@cencosud.com</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-3 text-white-50 small">
+                        <i class="bi bi-telephone-fill text-cenco-blue"></i>
+                        <span>Anexo: 4500</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 text-white-50 small">
+                        <i class="bi bi-geo-alt-fill text-cenco-blue"></i>
+                        <span>Lima, Peru</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="huincha-tricolor">
+            <div class="huincha-blue"></div>
+            <div class="huincha-light-blue"></div>
+            <div class="huincha-orange"></div>
+        </div>
+        <div class="bg-black bg-opacity-30 py-4 text-center text-white text-opacity-50 small text-uppercase tracking-widest" style="font-size: 11px; font-weight: 700; letter-spacing: 2px;">
+            © 2026 Cencosud S.A. - Todos los derechos reservados | Talento Humano Perú
+        </div>
+    </footer>
+
+</body>
+</html>
